@@ -20,6 +20,8 @@ import java.awt.RenderingHints;
 import java.awt.Stroke;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -30,9 +32,40 @@ import javax.swing.JLabel;
 public class Torneo extends JDesktopPane {
 
     private static final Stroke s = new BasicStroke(4.0f);
+    ArrayList<Competidor> lista = new ArrayList<>();
+    ArrayList<MyFrame> CompeDibujo = new ArrayList<>();
+    private int distancia = 20;
+    
+    
 
     public Torneo() {
         this.setPreferredSize(new Dimension(1024, 768));
+        lista.add(new Competidor("Andres", "Perez", "Hernández", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Ana Karen", "Rodriguez", "Ramírez", "Juan Luis Vives", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Diana Karen", "Xolalpa", "Alducin", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Maria José", "Ramos", "Portillo", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Emilia", "Huerta", "de la Cruz", "Soshin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Saúl", "Tomé", "Vázquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Jaqueline", "Aquino", "Hernández", "Dojo del sur", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Maya Gabriel", "Rodríguez", "Cayetano", "Kasoku Fenix", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Carlos", "Gómez", "Ligonio", "Juan Luis Vives", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Yael Martín", "Enriquez", "López", "Halcones", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Fanny Michelle", "Roldan", "Corona", "Sansei Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        int conta=0;
+        for (Iterator<Competidor> it = lista.iterator(); it.hasNext();) {
+            Competidor cpt1 = it.next();
+            CompeDibujo.add(new MyFrame(cpt1.conseguirDojo(), cpt1.conseguirNombre()+" "+cpt1.conseguirApellidoPaterno()+" "+cpt1.ApellidoMaterno,100, distancia));
+            this.add(CompeDibujo.get(conta));
+            System.out.println(conta);
+            distancia = distancia+100;
+            conta++;
+        }
     }
     private void lineaVertical (MyFrame one, MyFrame two,Graphics g ) {
 
@@ -101,31 +134,21 @@ public class Torneo extends JDesktopPane {
         g2d.setColor(Color.blue);
         g2d.setStroke(s);
         
-        // ***************** DIbujando lineas y elementos *****************
-        MyFrame one = new MyFrame("Densho Juko Sur","Hugo Ramirez Pérez", 100, 100);
-        one.setBackground(Color.PINK);
-        MyFrame two = new MyFrame("Juan Luis Vives", "Antonio Ortega Galván",100, 200);
-        MyFrame one1 = new MyFrame("Densho Juko Sur","Karen Rodriguez ", 100, 300);
-        MyFrame two2 = new MyFrame("Juan Luis Vives", "Oscar Hernandez",100, 400);
-        this.add(one);
-        this.add(two);
-        this.add(one1);
-        this.add(two2);
         // ***************** Primeras conexiones del nodo 1
-        lineaHorizontal(one, g);
-        lineaHorizontal (two, g);
-        lineaVertical (one, two,g );
+       lineaHorizontal(CompeDibujo.get(0), g);
+       lineaHorizontal (CompeDibujo.get(1), g);
+       lineaVertical (CompeDibujo.get(0), CompeDibujo.get(1),g );
         
         // ***************** Segundo conexiones del nodo 2
-        lineaHorizontal(one1, g);
-        lineaHorizontal(two2, g);
-        lineaVertical (one1, two2,g );
+        //lineaHorizontal(one1, g);
+        //lineaHorizontal(two2, g);
+        //lineaVertical (one1, two2,g );
         
         // ***************Linea Ganador ***************
         //MyFrame Ganador =lineaHorizontalGanador (one, two, two, g);
         //this.add(Ganador);
-            MyFrame Ganador2 =lineaHorizontalGanador (one1, two2, one1, g);
-            this.add(Ganador2);
+          //  MyFrame Ganador2 =lineaHorizontalGanador (one1, two2, one1, g);
+           // this.add(Ganador2);
         
         
         //MyFrame Ganador3 =lineaHorizontalGanador (Ganador, Ganador2, Ganador, g);
@@ -143,7 +166,6 @@ public class Torneo extends JDesktopPane {
             this.Nombre = name;
             this.Etiqueta = Etiqueta;
 
-
             // Tamaño de letra
             float tamano = 15;
             // ***************************
@@ -154,16 +176,16 @@ public class Torneo extends JDesktopPane {
             Font font = Mensaje.getFont();
             font = font.deriveFont(tamano);
             Mensaje.setFont(font);
+            this.add (Mensaje);
             // **********************************************************
             this.setVisible(true);
-            
-            this.add (Mensaje);
             this.addComponentListener(new ComponentAdapter() {
 
-                @Override
-                public void componentMoved(ComponentEvent e) {
-                    Torneo.this.repaint();
-                }
+            
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                  Torneo.this.repaint();
+               }
             });
         }
         String ConseguirNombre() {
@@ -175,8 +197,9 @@ public class Torneo extends JDesktopPane {
     }
 
     private void display() {
-        JFrame f = new JFrame("EJemplo de Gráficas");
+        JFrame f = new JFrame("Ejemplo de Gráficas");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setResizable(true);
         f.add(this);
         f.pack();
         f.setLocationRelativeTo(null);
@@ -190,6 +213,7 @@ public class Torneo extends JDesktopPane {
             public void run() {
                 new Torneo().display();
             }
+            
         });
     }
 }
