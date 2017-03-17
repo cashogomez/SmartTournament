@@ -25,8 +25,11 @@ import static java.lang.Math.pow;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
-import static javax.management.Query.value;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -46,7 +49,7 @@ public class Torneo extends JDesktopPane {
     final private int ancho =100; // Ancho de los nombre
     final private int x0=450; // posicion inicial respecto del borde izquierdo
     final private int anchoMyFrame = 220;  // Ancho de los frames del competidor
-    
+    final private int altoMyFrame = 70;  // Ancho de los frames del competidor    
     
 
     public Torneo() {
@@ -55,7 +58,7 @@ public class Torneo extends JDesktopPane {
         lista.add(new Competidor("Ana Karen", "Rodriguez", "Ramírez", "Juan Luis Vives", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Diana Karen", "Xolalpa", "Alducin", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Maria José", "Ramos", "Portillo", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Emilia", "Huerta", "de la Cruz", "Soshin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Emilia", "Huerta", "de la Cruz", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Saúl", "Tomé", "Vázquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Jaqueline", "Aquino", "Hernández", "Dojo del sur", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Maya Gabriel", "Rodríguez", "Cayetano", "Kasoku Fenix", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
@@ -68,7 +71,7 @@ public class Torneo extends JDesktopPane {
         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Pedro", "Infante", "Crisanto", "Densho Juku Shitokai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Pedro", "Infante", "Crisanto", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Jorge", "Negrete", "Crisanto", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Camila", "Sodi", "Hernandez", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Adelita", "Sefue", "ConOtro", "Desho Revolucion", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
@@ -77,35 +80,44 @@ public class Torneo extends JDesktopPane {
         lista.add(new Competidor("Roberto", "Cantu", "Perez", "Desho UPAEP", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));       
+        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));       
         
         int conta=0;
         for (Iterator<Competidor> it = lista.iterator(); it.hasNext();) {
             Competidor cpt1 = it.next();
             CompeDibujo.add(new MyFrame(cpt1.conseguirDojo(), cpt1.conseguirNombre()+" "+cpt1.conseguirApellidoPaterno()+" "+cpt1.ApellidoMaterno,x0, distancia));
             this.add(CompeDibujo.get(conta));
-            System.out.println(conta);
+            //System.out.println(conta);
             distancia = distancia+ancho;
             conta++;
         }
         Ordenados = ordenar(CompeDibujo);
+    }
+    private Map<String,Integer> cuenta () {
+        Map<String,Integer> map = new HashMap<String, Integer>();
+        for(int i=0;i<CompeDibujo.size();i++){            
+            Integer count = map.get(CompeDibujo.get(i).ConseguirNombre());       
+            map.put(CompeDibujo.get(i).ConseguirNombre(), count==null?1:count+1);   //auto boxing and count
+        }
+        return map;
+        //System.out.println(map);
     }
     private ArrayList<Integer> MalasBuenas (int tamano, int malas, int buenas ) {
         ArrayList<Integer> temporal =  new ArrayList<>();
@@ -113,7 +125,6 @@ public class Torneo extends JDesktopPane {
         int limite =0;
         int iteracion=1;
         int k=0;
-        System.out.println("Iniciando ordenamiento");
         if (malas==0 && buenas==0) {
             for (int xx=0; xx<tamano; xx++) {
                 temporal.add(1);  // El valor de 1 indica un pasabuenas
@@ -135,7 +146,7 @@ public class Torneo extends JDesktopPane {
                             k++;
                         }
                     }
-                    System.out.println(" limite " + limite+ " index "+arr.get(iteracion));
+                    //System.out.println(" limite " + limite+ " index "+arr.get(iteracion));
                     if ((tamano+buenas)<22) {
                        temporal.add(arr.get(iteracion), 2); 
                     }
@@ -263,7 +274,13 @@ public class Torneo extends JDesktopPane {
         x2 = two.getX() + two.getWidth()+2*ancho;
         y2 = y1;
         g2d.drawLine(x1, y1, x2, y2);
-        Ganador = new MyFrame(Ganador.ConseguirNombre(), Ganador.ConseguirEtiqueta(),x2, y1-(70/2));
+        if (Ganador.ConseguirEtiqueta().isEmpty()) {
+           Ganador = new MyFrame("", "",x2, y1-(altoMyFrame/2)); 
+        }
+        else {
+            Ganador = new MyFrame(Ganador.ConseguirNombre(), Ganador.ConseguirEtiqueta(),x2, y1-(altoMyFrame/2));
+        }
+        
         return Ganador;
      //  Este bloque es necesario este junto para que los valores retornados sean congruentes   
    }   
@@ -299,31 +316,124 @@ public class Torneo extends JDesktopPane {
         }
         System.out.println("Participantes "+ tamano+ " bypass " +malas +" pasomalas " +pasoMalas+" pasoBuenas "+buenas);   
         // Sorting
+        
+        // *************************************************
+        // ************************************************** ORDENAMIENTO ******************************
         Collections.sort(CompeDibujo, new CustomComparator());
+        ArrayList<MyFrame> movidos = new ArrayList<>();
+        Map<String,Integer> mapeo = new HashMap<String, Integer>();
+        ArrayList<Integer> arr =  new ArrayList<>();
+        String dojo="";
+        mapeo = cuenta();  // Cuenta cantos dojos repetidos
+        int max = Collections.max(mapeo.values()); 
+        //System.out.println("maximo repetido"+ max);
+        for (Entry<String, Integer> entry : mapeo.entrySet()) {  // Itrate through hashmap
+            if (entry.getValue()==max) {
+                dojo = entry.getKey();
+            }
+        }
+        //System.out.println(dojo);
+        int xx=0; 
+        int contador=0;
+        while (xx<CompeDibujo.size()) {
+            //System.out.println("Fuera: indice "+xx+" "+prueba);
+            if (CompeDibujo.get(xx).ConseguirNombre().equals(dojo)) {
+                //System.out.println("indice "+xx+" "+prueba);
+                movidos.add(CompeDibujo.get(xx));  // El valor de 1 indica un pasabuenas 
+                arr.add(contador);
+                contador++;
+                CompeDibujo.remove(xx);
+                xx=0;
+            }
+            else {
+                xx++;
+            }
+        }
+        contador=0;
+        //System.out.println("Nuevo tamaño "+CompeDibujo.size());
+        int Nmax=0;
+        String Ndojo="";
+        int tempo=0;
+        mapeo = cuenta();
+        Nmax = Collections.max(mapeo.values());
+        for (Entry<String, Integer> entry : mapeo.entrySet()) {  // Itrate through hashmap
+            if (entry.getValue()==Nmax) {
+                    //System.out.println(entry.getKey());     // Print the key with max value
+                Ndojo = entry.getKey();
+            }
+        }
+        int Ncontador=0;
+        while (movidos.size()<tamano) {
+            if (contador>=(max)) {
+                contador=0;
+            }
+            else {
+                if (tamano==3 && max==2) {
+                    contador=1;
+                }
+                if (Ncontador>=Nmax)
+                {
+                    Ncontador=0;
+                    mapeo = cuenta();
+                    Nmax = Collections.max(mapeo.values()); 
+                    for (Entry<String, Integer> entry : mapeo.entrySet()) {  // Itrate through hashmap
+                        if (entry.getValue()==Nmax) {
+                            //System.out.println(entry.getKey());     // Print the key with max value
+                            Ndojo = entry.getKey();
+                        }
+                    }
+                }
+                
+            }
+
+            //System.out.println("Nuevo Dojo " + Ndojo+ " contador "+contador+ " Nmax "+Nmax); 
+            for (xx=0; xx<CompeDibujo.size(); xx++) {
+                if (CompeDibujo.get(xx).ConseguirNombre().equals(Ndojo)) {
+                    //if (contador%2==0) {
+                        movidos.add(arr.get(contador), CompeDibujo.get(xx));
+                    //}
+                    //else {
+                    //    movidos.add(arr.get(max-contador), CompeDibujo.get(xx));    
+                    //}
+                    
+                    contador++;
+                    Ncontador++;
+                    CompeDibujo.remove(xx);
+                    tempo=0;
+                    for (int yy=0; yy<movidos.size(); yy++) {
+                        if (movidos.get(yy).ConseguirNombre().equals(dojo)) {
+                            arr.set(tempo,yy);
+                            tempo++;
+                        }
+                    }
+                }
+            }
+        }
+        CompeDibujo=movidos;
+//        long seed = System.nanoTime();
+//        Collections.shuffle(CompeDibujo, new Random(seed));
+//        for (int x=0; x<CompeDibujo.size(); x++){
+//            System.out.println(" Dojo "+CompeDibujo.get(x).ConseguirEtiqueta()+" Nombre "+CompeDibujo.get(x).ConseguirNombre()+"\n");
+//        }
+        // ***************************************************** FIN DEL ORDENAMIENTO *********************************
+        
         int conta=0;
         int bypass=0;
         distancia=20; // ************************ Coloca la posición inicial del dibujo
         distribuir = MalasBuenas (referencia, pasoMalas, buenas ); // ****************************** Se distribuyen los pasamalas o pasabuenas ********
-        for (int xxx=0; xxx<referencia; xxx++ ) {
-            System.out.println(" Distribucion "+distribuir.get(xxx)+" index "+xxx);
-        };
         for (conta=0;conta<referencia; conta++) {
-            System.out.println(" entrando malas " +distribuir.get(conta));
             if (distribuir.get(conta)==1) {
                 CompeDibujo.get(bypass).ajustarPosicion(x0, distancia);
-                //System.out.println("Bypass "+bypass+ " distancia "+distancia);
                 distancia = distancia+ancho;
                 bypass++;
                 
             }
             else {
                 if (distribuir.get(conta)==2) {
-                    CompeDibujo.get(bypass).ajustarPosicion(x0-anchoMyFrame-ancho, distancia);
-                    //System.out.println("Bypass "+bypass+ " distancia "+distancia);
+                    CompeDibujo.get(bypass).ajustarPosicion(x0-anchoMyFrame-2*ancho, distancia);
                     distancia = distancia+ancho;
                     bypass++;
-                    CompeDibujo.get(bypass).ajustarPosicion(x0-anchoMyFrame-ancho, distancia);
-                    //System.out.println("Bypass "+bypass+ " distancia "+distancia);
+                    CompeDibujo.get(bypass).ajustarPosicion(x0-anchoMyFrame-2*ancho, distancia);
                     distancia = distancia+ancho;
                     bypass++;
                 }
@@ -339,15 +449,14 @@ public class Torneo extends JDesktopPane {
             RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setColor(Color.CYAN);                          //  ************* Color del fondo del dibujo *****************************
         g2d.fillRect(0, 0, getWidth(), getHeight());
-        g2d.setColor(Color.blue);
+        g2d.setColor(Color.blue);                          // ************** Color de las lineas de conexiones **********************
         g2d.setStroke(s);
+        MyFrame vacio = new MyFrame("", "", 0,0);
         // ***************** Primeras conexiones del nodo 1
-        //Ordenados.get(0).display();
-        //Ordenados.get(1).display();
         
-        int tamano_d = distribuir.size();
+        int tamano = distribuir.size(); // Calcula el tamaño de la lista que tuilizaremos para dibujar
         int conta=0;
-        for (int x=0; x<tamano_d; x++){
+        for (int x=0; x<tamano; x++){
             if (distribuir.get(x)==1) {
                 Ordenados.get(conta).display(); //   ************   Dibuja los competidores ordenados  
                 conta++;
@@ -356,7 +465,9 @@ public class Torneo extends JDesktopPane {
                 if (distribuir.get(x)==2) {
                     Ordenados.get(conta).display(); //   ************   Dibuja los competidores ordenados  
                     Ordenados.get(conta+1).display(); //   ************   Dibuja los competidores ordenados  
-                    conectar(Ordenados.get(conta),Ordenados.get(conta+1), g);
+                    vacio= lineaHorizontalGanador (Ordenados.get(conta),Ordenados.get(conta+1), vacio, g);
+                    this.add(vacio);
+                    vacio.display();
                     conta=conta+2; 
                 }
             } 
@@ -396,7 +507,7 @@ public class Torneo extends JDesktopPane {
             // Tamaño de letra
             float tamano = 15;
             // ***************************
-            this.setSize(anchoMyFrame, 70);
+            this.setSize(anchoMyFrame, altoMyFrame);
             this.setLocation(x, y);
             //        CONFIGURACION de tamaño de leta de mensajes
             JLabel Mensaje = new JLabel(Etiqueta);
@@ -433,7 +544,6 @@ public class Torneo extends JDesktopPane {
     public int compare(MyFrame o1, MyFrame o2) {
         String c1 = o1.ConseguirNombre().toUpperCase();
         String c2 = o2.ConseguirNombre().toUpperCase();
-       // System.out.println(c1+" " + c2);
         return c1.compareTo(c2);
     }
 }
