@@ -60,44 +60,44 @@ public class Torneo extends JDesktopPane {
         lista.add(new Competidor("Maria José", "Ramos", "Portillo", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Emilia", "Huerta", "de la Cruz", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Saúl", "Tomé", "Vázquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Jaqueline", "Aquino", "Hernández", "Dojo del sur", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Maya Gabriel", "Rodríguez", "Cayetano", "Kasoku Fenix", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Carlos", "Gómez", "Ligonio", "Juan Luis Vives", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Yael Martín", "Enriquez", "López", "Halcones", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Fanny Michelle", "Roldan", "Corona", "Sansei Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Jaqueline", "Aquino", "Hernández", "Dojo del sur", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Maya Gabriel", "Rodríguez", "Cayetano", "Kasoku Fenix", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Carlos", "Gómez", "Ligonio", "Juan Luis Vives", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Yael Martín", "Enriquez", "López", "Halcones", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Fanny Michelle", "Roldan", "Corona", "Sansei Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
         lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Pedro", "Infante", "Crisanto", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Jorge", "Negrete", "Crisanto", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Camila", "Sodi", "Hernandez", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Adelita", "Sefue", "ConOtro", "Desho Revolucion", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Enrique", "Peña", "Perez", "Desho Gob", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Roberto", "Cantu", "Perez", "Desho UPAEP", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
-        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));       
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Pedro", "Infante", "Crisanto", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Jorge", "Negrete", "Crisanto", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Camila", "Sodi", "Hernandez", "Desho Oro", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Adelita", "Sefue", "ConOtro", "Desho Revolucion", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Enrique", "Peña", "Perez", "Desho Gob", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Roberto", "Cantu", "Perez", "Desho UPAEP", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Andrea", "Legarreta", "Perez", "Desho Televisa", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Hector Hugo", "Condado", "Serrano", "Mushin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Evelyn", "Rodríguez", "Ramírez", "Seishin Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Norma", "Hernández", "Montiel", "Honbu Dojo", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//         lista.add(new Competidor("Estela", "Xolalpa", "Alducin", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Sandra", "Franco", "Velazquez", "Densho Juku Shito Kai", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));
+//        lista.add(new Competidor("Marco Antonio", "Rosas", "Crisanto", "ISKA", "9 kyu", "Infantil", "Mixto","Kata", "Individual", 8 ));       
         
         int conta=0;
         for (Iterator<Competidor> it = lista.iterator(); it.hasNext();) {
@@ -561,9 +561,9 @@ public class Torneo extends JDesktopPane {
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
-
             @Override
             public void run() {
+                new reloj();   //echa a andar el reloj
                 new Torneo().display();
             }
             
